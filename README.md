@@ -108,6 +108,10 @@ python main.py --repo <REPO> --n 10 --out report.json --model mistral:7b
 }
 ```
 
+## Environment file
+
+Create an environment file .env like the .env.example file which contains a parameter for the chunk size.
+
 ## Current secret types
     These are implemented via Regex, you may add more as you desire.
 
