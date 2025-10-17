@@ -20,8 +20,7 @@ An LLM-powered CLI-tool that scans Git repositories for hardcoded secrets and se
 ## Note on LLMs
     
 The current implementation uses a local Ollama model which is automatically pulled by the CLI-tool itself, however the LLM-Analysis service is decoupled from the underlying
-Ollama implementation. So the system can easily be replaced with another service that calls an external LLM via API e.g. OpenAI or Anthropic. The abstract class BaseLLMProvider
-may be used (defined in ollama_provider.py) to create another LLM-Client, which can then be passed in the llm_service. 
+Ollama implementation. So the system can easily be replaced with another service that calls an external LLM via API e.g. OpenAI or Anthropic. The abstract class [BaseLLMProvider](https://github.com/ErenCanYildirim/LLM-Secrets-Scanner-for-Git-Repos/blob/main/src/basellm_provider.py) may be used to create another LLM-Client, which can then be passed in the llm_service. 
 ```python
 def __init__(self, provider: Optional[BaseLLMProvider] = None):
 self.provider = provider or OllamaProvider(auto_start=True)
